@@ -1,0 +1,41 @@
+Content-Type: multipart/mixed; boundary="===============8733086182505442499=="
+MIME-Version: 1.0
+Subject: Contracts Error log
+From: from@example.com
+To: to@example.com
+Date: Wed, 30 Oct 2019 06:54:48 -0000
+Message-ID: <157241848869.7900.9416442670656892805@apples-MacBook-Air-2.local>
+
+--===============8733086182505442499==
+Content-Type: multipart/alternative;
+ boundary="===============7232150222308534350=="
+MIME-Version: 1.0
+
+--===============7232150222308534350==
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+
+This is an important message.
+--===============7232150222308534350==
+Content-Type: text/html; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+
+<h1> Contracts Error Report </h1>
+<p> Total number of records that were erroneous = 0"</p>
+<p> Total number of repeated records = 0"</p>
+
+--===============7232150222308534350==--
+
+--===============8733086182505442499==
+Content-Type: application/json
+MIME-Version: 1.0
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="populate_contracts_error_data.json"
+
+eyJyZXBlYXRlZCI6IFtdLCAiZXJyb3IiOiBbXX0=
+
+--===============8733086182505442499==--
+
+-------------------------------------------------------------------------------

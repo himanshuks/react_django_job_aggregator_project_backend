@@ -1,0 +1,13 @@
+{% extends 'hupleruser/base.html' %}
+{% block title %} <span style="color:rgb(54, 51, 51)">Home</span> {% endblock %}
+{% block content %}
+
+<h1>Django Login Mega-Tutorial</h1>
+    {% if user.is_authenticated %}
+        <p>Hi {{ user.username }}
+        <p><a href="{% url 'logout' %}">Log out</a></p>
+    {% else %}
+        <p><a href="{% url 'signup' %}">Sign Up</a></p>
+        <p><a href="{% url 'login' %}">Log In </a></p>
+    {% endif %}
+{% endblock %}

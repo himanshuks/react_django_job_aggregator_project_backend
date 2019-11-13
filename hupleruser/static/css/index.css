@@ -1,0 +1,115 @@
+body {
+  /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVfISqn0V_vG7tHJklzxPYka5j-80DIA8zj4cDbCk8h0cDgFSK");
+  background-repeat: no-repeat;
+  background-size: 150% 150%; */
+  background-color: rgb(236, 234, 234);
+  /* color: white; */
+  margin: 3%;
+  text-shadow: 2px 2px 8px rgb(85, 72, 72);
+  color: white;
+  font-family: "AvenirNext-Regular";
+}
+
+img {
+  border: 3px solid #282c34;
+}
+
+.container-fluid {
+  /* height: 100vh; */
+  /* background-color: #d8dce4; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-fluid>div {
+  width: 100%;
+  min-width: 300px;
+  max-width: 500px;
+  /* border: 1px solid grey !important; */
+  background: radial-gradient(#aad6e4, #2eb3d9);
+  box-shadow: 5px 10px 8px #888888;
+}
+
+
+.card {
+  width: 100%;
+}
+
+.social-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.btn a,
+.btn a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+input[type="text"] {
+  background-color: #F0F0F0;
+  color: black !important;
+  font-size: 16px;
+  /* margin-bottom: 20px; */
+  border: none;
+  width: 100%;
+  padding: 10px;
+  height: 30;
+  margin: 0px;
+  border-radius: 5px;
+}
+
+input[type="password"] {
+  background-color: #F0F0F0;
+  color: black;
+  font-size: 16px;
+  /* margin-bottom: 20px; */
+  border: none;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+input[type="email"] {
+  background-color: #F0F0F0;
+  color: black;
+  font-size: 16px;
+  /* margin-bottom: 20px; */
+  border: none;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* .login {
+  width: 400px;
+  margin-left: 600px;
+  margin-top: 20px;
+}
+
+*/
+button {
+  padding: 15px 0px;
+  background-color: #177de3;
+  color: #fff;
+  font-size: 20px;
+  margin-top: 10px;
+  /* margin-bottom: 30px; */
+  border: none;
+  width: 100%;
+  border-radius: 5px;
+}
+
+#id_country {
+  background-color: #F0F0F0;
+  color: black;
+  font-size: 16px;
+  /* margin-bottom: 20px; */
+  border: none;
+  width: 100%;
+  height: 40px !important;
+  padding: 10px;
+  border-radius: 0px !important;
+}

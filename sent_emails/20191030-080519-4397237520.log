@@ -1,0 +1,42 @@
+Content-Type: multipart/mixed; boundary="===============1895609897233519075=="
+MIME-Version: 1.0
+Subject: Tenders Error log
+From: from@example.com
+To: to@example.com
+Date: Wed, 30 Oct 2019 08:05:19 -0000
+Message-ID: 
+ <157242271920.8722.15869970693049147037@apples-MacBook-Air-2.local>
+
+--===============1895609897233519075==
+Content-Type: multipart/alternative;
+ boundary="===============6322492042655654271=="
+MIME-Version: 1.0
+
+--===============6322492042655654271==
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+
+This is an important message.
+--===============6322492042655654271==
+Content-Type: text/html; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+
+<h1> Tenders Error Report </h1>
+<p> Total number of records that were erroneous = 0")</p>
+<p> Total number of repeated records = 0")</p>
+
+--===============6322492042655654271==--
+
+--===============1895609897233519075==
+Content-Type: application/json
+MIME-Version: 1.0
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="populate_tenders_error_data.json"
+
+eyJyZXBlYXRlZCI6IFtdLCAiZXJyb3IiOiBbXX0=
+
+--===============1895609897233519075==--
+
+-------------------------------------------------------------------------------

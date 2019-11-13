@@ -1,0 +1,29 @@
+{% extends 'hupleruser/base.html' %}
+{% block title %} Sign in {% endblock %}
+{% block content %}
+<div class="row">
+    <h1>Django Login Mega-Tutorial</h1>
+    {% if user.is_authenticated %}
+    <p>Hi {{ user.username }}
+        <p><a href="{% url 'logout' %}">Log out</a></p>
+    {% else %}
+    <p><a href="{% url 'signup' %}">Sign Up</a></p>
+    <p><a href="{% url 'login' %}">Log In </a></p>
+    {% endif %}
+    <div class="col-md-8 mx-auto social-container my-2 order-md-1">
+
+        <button class="btn btn-info mb-2">
+            <a href="{% url 'social:begin' 'linkedin-oauth2' %}">Login with LinkedIn</a>
+        </button>
+
+        <button class="btn btn-info mb-2">
+            <a href="{% url 'social:begin' 'google-oauth2' %}">Login with Google</a>
+        </button>
+
+        <button class="btn btn-primary mb-2">
+            <a href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a>
+        </button>
+    </div>
+</div>
+</div>
+{% endblock %}

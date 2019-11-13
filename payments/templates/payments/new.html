@@ -1,0 +1,145 @@
+{% extends 'payments/base.html' %}
+{% block content %}
+
+<div class="wrapper">
+    <div class="checkout container">
+
+        <header style="text-align: center">
+            <h1>Upgrade Your Plan</h1>
+            <div>
+                <div class="profile-tab-items">
+
+                    <span class="ptn-2">
+                        Do you need help? Visit customer support
+                    </span>
+                </div><br />
+
+                <h5><b style="color:grey">Choose Your Plans to Upgrade.</b> </h5>
+                <br></br>
+
+
+                <div style="display: flex;flex-direction: row;width: 100%">
+                    <div class="planFree">
+                        <h3><b>Free</b></h3>
+                        <p>
+
+                            Forever</p>
+                        <br /><br />
+                        <span>Placeholder To Do</span>
+                        <br />
+                        <div>
+                            <button name="FreesubscriptionCard" id="free" value="0" class="upgradebutton1" type="submit"
+                                onclick="FreesubscriptionCard()">Current account </button>
+                        </div>
+
+
+                    </div>
+                    <div style=" display: flex;flex-direction: row">
+                        {% for subscription in subscription_plans %}
+                        <div class="plans-{{subscription}}">
+                            <div>
+                                <h3><b>$ {{subscription.cost_per_transaction}}</b></h3>
+                                <p>
+                                    {{ subscription.plan_name }}</p>
+                                <br />
+                                <br />
+                                <span>Placeholder To Do</span>
+                                <br /><br />
+                                <div>
+                                    <button name="subscriptionCard" id={{subscription.id}}
+                                        value={{subscription.cost_per_transaction}} class="upgradebutton2" type="submit"
+                                        onclick="sendSubscriptionDetails(value)">Upgrade
+                                        Button</button>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        {% endfor %}
+                    </div>
+
+                </div>
+
+
+
+
+                <br />
+
+                <form id="payment-form" method="post" action=".">
+                    {% csrf_token %}
+
+            </div>
+
+            <p id="result"></p><br />
+        </header>
+        <div id="welcomeDiv" style="display:none;">
+
+            <section>
+                <div class="bt-drop-in-wrapper">
+                    <div id="bt-dropin"></div>
+                </div>
+            </section>
+            <input id="subscription_plan_id" name="subscription_plan_id" type="hidden" value="">
+            <input type="hidden" id="nonce" name="payment_method_nonce" />
+            <button type="submit" id="submit-button" class="PayButton"><b style="padding: 3rem">Finish and
+                    Pay</b></button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="https://js.braintreegateway.com/web/dropin/1.20.1/js/dropin.min.js"></script>
+<script>
+    var form = document.querySelector('#payment-form');
+    var client_token = '{{ client_token }}';
+
+    braintree.dropin.create({
+        authorization: client_token,
+        container: '#bt-dropin',
+        paypal: {
+            flow: 'vault'
+        }
+    }, function (createErr, instance) {
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            instance.requestPaymentMethod(function (err, payload) {
+                if (err) {
+                    console.log('Error', err);
+                    return;
+                }
+
+                // Add the nonce to the form and submit
+                document.querySelector('#nonce').value = payload.nonce;
+                form.submit();
+            });
+        });
+    });
+
+    function sendSubscriptionDetails(planvalue) {
+        document.getElementById('welcomeDiv').style.display = "block";
+        var ele = document.getElementsByName('subscriptionCard');
+        document.getElementById("result").innerHTML
+            = "Pay securly with a credit card or PayPal. Your Total is $" + planvalue;
+        // for (i = 0; i < ele.length; i++) {
+        //     if (ele[i].checked) {
+        //         document.getElementById("result").innerHTML
+        //             = "Pay securly with a credit card or PayPal. Your Total is $" + ele[i].value;
+
+        //         document.getElementById("subscription_plan_id").value = ele[i].id;
+        //     }
+        // }
+
+
+    }
+    function FreesubscriptionCard() {
+
+        document.getElementById("result").innerHTML = "Plcae Holder to do";
+
+
+
+    }
+
+</script>
+{% endblock %}
